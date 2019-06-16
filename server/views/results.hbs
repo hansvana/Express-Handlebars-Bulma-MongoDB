@@ -1,0 +1,14 @@
+{{> header }}
+
+<div class="container">
+    <p><a href="/"><< Back</a></p>
+    <strong>Results</strong>
+
+    <ul>
+        {{#each result}}
+        <li>{{this.t_name}}</li>
+        {{/each}}
+    </ul>
+</div>
+
+{{> footer }}

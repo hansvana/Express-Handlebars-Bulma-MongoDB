@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Hello World!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+            integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="/css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        {{#each errors}}
+        <div class="notification is-danger">
+            <span class="icon has-text-danger">
+                <i class="fa fa-ban fa-inverse"></i>
+            </span>
+            {{this.msg}}
+        </div>
+        {{/each}} 
+        {{#each info}}
+        <div class="notification is-success">
+            <span class="icon has-text-info">
+                <i class="fa fa-info-circle fa-inverse"></i>
+            </span>
+            {{this.msg}}
+        </div>
+        {{/each}}
