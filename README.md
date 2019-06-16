@@ -1,5 +1,14 @@
 # Express - Handlebars - Bulma - MongoDB
 
+## Features
+- Mongoose
+- Express
+- Express Bodyparser
+- Flash
+- Bulma
+- Babel
+- SCSS
+
 ## Requirements
 - [Node](https://nodejs.org/en/download/)
 - [MongoDB](https://www.mongodb.com/download-center/community)
