@@ -1,6 +1,7 @@
 # Express - Handlebars - Bulma - MongoDB
 
 ## Features
+- Docker
 - Mongoose
 - Express
 - Express Bodyparser
@@ -10,22 +11,26 @@
 - SCSS
 
 ## Requirements
-- [Node](https://nodejs.org/en/download/)
+- [Docker](https://www.docker.com/products/docker-desktop)
 - [MongoDB](https://www.mongodb.com/download-center/community)
 
 ## First time setup
-- Install pm2 globally: `npm install pm2@latest -g`
 - `git clone` this repo
-- `cd` into folder
+- `cd` into the *server* folder
+- Go into *Docker settings > Shared Drives* and share the drive the directory is on
+- `docker build -t "server" .`
 
-## Server side
-- `cd server`
-- `npm install` to install all dependencies
-- `pm2 start server/index.js --name "server" --watch` to run the server, it will automatically restart when you change any file
-- `pm2 monit` to monitor the server
-- `pm2 stop server` to stop the server
+## Running server
+- Windows: `docker run -p 80:8080 -it --name server -v "%cd%\app":/var/www/app server`
+- Mac (untested): `docker run -p 80:8080 -it --name server -v "pwd/app":/var/www/app server` 
+- `Ctrl-C` to detach
+- `docker container attach server` to reattach
+- type `rs` while attached to manually restart
 
-## Client side CSS and JS
-- `cd src`
+## Running client side compilers
+Only needed if you want to edit the files in the `src` directory
+- Make sure [Node](https://nodejs.org/en/) is installed
+- `cd` into the *src* folder
 - `npm run watch`
-- Note: SCSS will not compile on startup, make a change to the scss file to trigger compilation
+- Note: SCSS will not compile on startup, only after the first detected change
+- Note: Changes to es6 files will not result in any console output, but the files will still be compiled

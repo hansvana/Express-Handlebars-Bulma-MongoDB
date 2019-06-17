@@ -15,6 +15,9 @@ const favicon = require('serve-favicon');
 // dotenv
 require('dotenv').config();
 
+// Connect to MongoDB
+const db = require('./db');
+
 /**
  * 
  * Api
@@ -26,9 +29,10 @@ require('dotenv').config();
 class Api {
 
     constructor() {
-        this.port = 80;
+        this.port = 8080;
         this.init();
     }
+
 
     init() {
 
@@ -60,7 +64,6 @@ class Api {
         this.app.use((req, res, next) => {
             res.locals.errors = req.flash('error');
             res.locals.info = req.flash('info');
-            console.log(res.locals.info);
             next();
         });
 

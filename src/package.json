@@ -3,8 +3,8 @@
   "version": "2019.0.1",
   "description": "",
   "scripts": {
-    "watch-scss": "node-sass -w scss -o ../server/public/css",
-    "watch-babel": "babel es6 -d ../server/public/lib -w",
+    "watch-scss": "node-sass -w scss -o ../server/app/public/css",
+    "watch-babel": "babel es6 -d ../server/app/public/lib -w",
     "watch": "concurrently \"npm:watch-*\""
   },
   "author": "Hans van Arken <hansvanarken@gmail.com> (http://mouseover.nl)",
